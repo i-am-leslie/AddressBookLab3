@@ -1,4 +1,4 @@
-package com.AddressBook.AddressBook;
+package com.AddressBook.AddressBook.model;
 
 
 import jakarta.persistence.*;
@@ -14,7 +14,7 @@ public class AddressBook  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "AddressBook")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "AddressBook", fetch =FetchType.EAGER )
     private List<BuddyInfo> buds;
 
     public AddressBook() {
@@ -32,11 +32,9 @@ public class AddressBook  {
 
 
 
-    public void  getBuds() {
+    public List<BuddyInfo> getBuds() {
+        return  buds;
 
-        for(BuddyInfo b : buds){
-            System.out.println(b.toString());
-        };
     }
 
 

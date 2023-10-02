@@ -1,5 +1,6 @@
-package com.AddressBook.AddressBook;
+package com.AddressBook.AddressBook.model;
 import jakarta.persistence.*;
+import com.AddressBook.AddressBook.model.AddressBook;
 
 @Entity
 
@@ -15,7 +16,7 @@ public class BuddyInfo {
 
 
     @ManyToOne
-    private  AddressBook AddressBook;
+    private com.AddressBook.AddressBook.model.AddressBook AddressBook;
 
     public BuddyInfo() {
 
@@ -46,7 +47,6 @@ public class BuddyInfo {
     }
     public void setAddress(String address){
         this.address=address;
-
     }
 
     @Override
