@@ -29,6 +29,9 @@ public class AddressBook  {
             buds.add(friend);
         }
     }
+    public int getId(){
+        return id;
+    }
 
 
 

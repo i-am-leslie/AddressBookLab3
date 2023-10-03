@@ -1,5 +1,6 @@
 package com.AddressBook.AddressBook.Controller;
 
+
 import com.AddressBook.AddressBook.Repository.AddressBookRepository;
 import com.AddressBook.AddressBook.Repository.BuddyInfoRepository;
 import com.AddressBook.AddressBook.model.AddressBook;
@@ -7,7 +8,6 @@ import com.AddressBook.AddressBook.model.BuddyInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/Address")
@@ -32,6 +32,7 @@ public class AddressBookController {
         book.addBuddy(buds);
         addressBook.save(book);
         System.out.println(addressBook.existsById(buds.getId()) );
+
         return "Buddy " + " "+ buds.toString()+ " " + "was added";
     }
     @GetMapping("/getById/{id}")
