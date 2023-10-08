@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,11 @@
 </head>
 <body>
 <h1>Welcome to the Address Book Application</h1>
-<a href="/addressBook/1">View Address Book</a>
+
+<ul>
+    <li th:each="addressBook : ${addressBooks}">
+        <span th:text="${addressBooks}"></span>
+    </li>
+</ul>
 </body>
 </html>
