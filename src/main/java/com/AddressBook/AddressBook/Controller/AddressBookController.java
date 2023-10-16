@@ -2,7 +2,6 @@ package com.AddressBook.AddressBook.Controller;
 
 
 import com.AddressBook.AddressBook.Repository.AddressBookRepository;
-import com.AddressBook.AddressBook.Repository.BuddyInfoRepository;
 import com.AddressBook.AddressBook.model.AddressBook;
 import com.AddressBook.AddressBook.model.BuddyInfo;
 import org.springframework.beans.factory.annotation.Autowired;

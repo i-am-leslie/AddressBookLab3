@@ -22,30 +22,32 @@ public class AddressBookController2 {
     }
     @PostMapping("/add")
 
-    public String addBuddy(@RequestBody BuddyInfo buds){
+    public String addBuddy(@RequestBody BuddyInfo buds,Model model){
 
         AddressBook book=new AddressBook();
         book.addBuddy(buds);
         addressBook.save(book);
         System.out.println(addressBook.existsById(buds.getId()) );
+        model.addAttribute("buddyInfo", buds);
 
-        return "Buddy " + " "+ buds + " " + "was added";
+        return "addressbook";
     }
     @GetMapping("/getById/{id}")
-    public AddressBook getById(@PathVariable Integer id){
+    public String getById(@PathVariable Integer id){
         System.out.println(addressBook.count());
 
 
-        return  addressBook.findById(id).get();
+        return  "addressbook";
     }
     @GetMapping("/getAll")
-    public Iterable<AddressBook> getAll(Model model ){
+    public String getAll(Model model ){
+
         System.out.println(addressBook.count());
         model.addAttribute("addressBooks", addressBook.findAll());
 
 
 
-        return  addressBook.findAll();
+        return  "addressbook";
     }
 
 }
