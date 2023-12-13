@@ -11,20 +11,19 @@ public class BuddyInfo {
     private int id;
     private int phoneNumber;
     private String name;
-    private String address;
 
 
 
     @ManyToOne
-    private com.AddressBook.AddressBook.model.AddressBook AddressBook;
+    private AddressBook AddressBook;
 
     public BuddyInfo() {
 
     }
-    public BuddyInfo(int phoneNumber,String name,String address) {
+    public BuddyInfo(int phoneNumber,String name,AddressBook address) {
         this.phoneNumber=phoneNumber;
         this.name=name;
-        this.address=address;
+        this.AddressBook=address;
     }
 
     public int getPhoneNumber() {
@@ -33,8 +32,8 @@ public class BuddyInfo {
     public  String getName() {
         return name;
     }
-    public String getAddress() {
-        return address;
+    public AddressBook getAddress() {
+        return AddressBook;
     }
     public int  getId() {
         return id;
@@ -45,8 +44,8 @@ public class BuddyInfo {
     public void setName(String name){
         this.name=name;
     }
-    public void setAddress(String address){
-        this.address=address;
+    public void setAddress(AddressBook address){
+        this.AddressBook=address;
     }
 
     @Override

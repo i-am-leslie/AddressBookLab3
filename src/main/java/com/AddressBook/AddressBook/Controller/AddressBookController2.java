@@ -16,12 +16,16 @@ public class AddressBookController2 {
     @Autowired
     private AddressBookRepository addressBook;
 
-    public AddressBookController2(){
 
-
+    @PostMapping("/Address2/h")
+    public String homepage(){
+        return  "addressbook";
     }
-    @PostMapping("/add")
 
+
+
+
+    @PostMapping("/add")
     public String addBuddy(@RequestBody BuddyInfo buds,Model model){
 
         AddressBook book=new AddressBook();
