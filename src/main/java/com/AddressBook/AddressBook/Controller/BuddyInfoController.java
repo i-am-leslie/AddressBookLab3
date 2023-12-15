@@ -22,7 +22,7 @@ public class BuddyInfoController {
     }
     @PostMapping("/create")
     public String  createBuddy(@RequestBody BuddyInfo buds) {
-        BuddyInfo _tutorial = BuddyInfoRepo.save(new BuddyInfo(buds.getPhoneNumber(), buds.getName(), buds.getAddress()));
+        BuddyInfo _tutorial = BuddyInfoRepo.save(buds);
         System.out.println(BuddyInfoRepo.existsById(_tutorial.getId()) );
         return _tutorial + " "+"created ";
     }

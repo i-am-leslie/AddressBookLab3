@@ -1,6 +1,15 @@
 package com.AddressBook.AddressBook.model;
 import jakarta.persistence.*;
 import com.AddressBook.AddressBook.model.AddressBook;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 
 @Entity
 
@@ -16,46 +25,13 @@ public class BuddyInfo {
 
     @ManyToOne
     private AddressBook AddressBook;
-
-    public BuddyInfo() {
-
-    }
-    public BuddyInfo(int phoneNumber,String name,AddressBook address) {
-        this.phoneNumber=phoneNumber;
-        this.name=name;
-        this.AddressBook=address;
-    }
-
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-    public  String getName() {
-        return name;
-    }
-    public AddressBook getAddress() {
-        return AddressBook;
-    }
-    public int  getId() {
-        return id;
-    }
-    public void setPhoneNumber(int phoneNumber){
-        this.phoneNumber=phoneNumber;
-    }
-    public void setName(String name){
-        this.name=name;
-    }
-    public void setAddress(AddressBook address){
-        this.AddressBook=address;
-    }
-
+    
     @Override
     public String toString(){
-        return phoneNumber + " " + getName()+" "+ getAddress();
+        return phoneNumber + " " + getName()+" "+ getPhoneNumber();
     }
 
-    public void setAddressBook(AddressBook addressBook) {
-        this.AddressBook = addressBook;
-    }
+
 
 
 }

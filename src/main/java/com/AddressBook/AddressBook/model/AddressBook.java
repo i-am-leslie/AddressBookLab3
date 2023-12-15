@@ -2,12 +2,19 @@ package com.AddressBook.AddressBook.model;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
+
 
 public class AddressBook  {
     @Id
@@ -15,12 +22,7 @@ public class AddressBook  {
     private int id;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "AddressBook", fetch =FetchType.EAGER )
-    private List<BuddyInfo> buds;
-
-    public AddressBook() {
-        buds=new ArrayList<BuddyInfo>();
-
-    }
+    private List<BuddyInfo> buds=new ArrayList<BuddyInfo>();;
 
 
     public void addBuddy(BuddyInfo friend){
@@ -29,25 +31,6 @@ public class AddressBook  {
             buds.add(friend);
         }
     }
-    public int getId(){
-        return id;
-    }
-
-
-
-    public List<BuddyInfo> getBuds() {
-        return  buds;
-
-    }
-
-
-
-
-
-
-
-
-
 
 }
 
