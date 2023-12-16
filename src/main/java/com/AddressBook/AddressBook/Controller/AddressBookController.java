@@ -15,9 +15,11 @@ public class AddressBookController {
     private AddressBookRepository addressBook;
 
 
+    private final AddressBook  book;
+
 
     public AddressBookController(){
-
+         this.book=new AddressBook();
 
     }
 
@@ -25,7 +27,6 @@ public class AddressBookController {
 
     public String addBuddy(@RequestBody BuddyInfo buds){
 
-        AddressBook book=new AddressBook();
         book.addBuddy(buds);
         addressBook.save(book);
         System.out.println(addressBook.existsById(buds.getId()) );
@@ -33,11 +34,11 @@ public class AddressBookController {
         return "Buddy " + " "+ buds + " " + "was added";
     }
     @GetMapping("/getById/{id}")
-    public AddressBook getById(@PathVariable Integer id){
+    public String  getById(@PathVariable("id") Integer id){
         System.out.println(addressBook.count());
 
 
-       return  addressBook.findById(id).get();
+       return  addressBook.findById(id).toString();
     }
     @GetMapping("/getAll")
     public Iterable<AddressBook> getAll(){
