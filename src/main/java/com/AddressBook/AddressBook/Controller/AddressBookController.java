@@ -59,7 +59,6 @@ public class AddressBookController {
         System.out.println(addressBook.count());
 
         AddressBook a=addressBook.findById(id).get();
-        a.getBuddy(id).getName().toString();
 
        return  a.getBuddy(id).getName();
     }
