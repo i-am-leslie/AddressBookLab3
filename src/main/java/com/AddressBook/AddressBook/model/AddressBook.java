@@ -31,8 +31,8 @@ public class AddressBook  {
             buds.add(friend);
         }
     }
-    public String getBuddy(int id){
-       return  buds.get(id).toString();
+    public BuddyInfo getBuddy(int id){
+       return  buds.get(id);
     }
 
 }
