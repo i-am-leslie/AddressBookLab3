@@ -31,6 +31,7 @@ public class AddressBookController {
 
     public String addBuddy(@RequestBody BuddyInfo buds){
         AddressBook book=new AddressBook();
+
         book.addBuddy(buds);
         addressBook.save(book);
         System.out.println(addressBook.existsById(buds.getId()) );
